@@ -5,11 +5,11 @@ import vk
 import vk_api
 
 api_id = 544485
-api_hash = '4004650eefc291e8a53a08be1ba2849b'
-phone = '+79775766448'
+api_hash = '***'
+phone = '+*******'
 limit = 100
-vktoken='b65340f2ba915d558723eefe27d31088182ce6303d5b2b4a1d37e05f553738e9577607690f65ed47bbe07'
-confirmation_token="e136b88e"
+vktoken='***********'
+confirmation_token="*****"
 joblib_file = "ml/model.pkl"
 base_tags=""
 tags=['python','perl']
