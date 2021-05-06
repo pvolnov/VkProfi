@@ -1,6 +1,6 @@
 beautifulsoup4==4.6.3
 Flask==1.0.2
-Flask-Cors==3.0.6
+Flask-Cors==3.0.9
 numpy==1.15.1
 catboost
 joblib
