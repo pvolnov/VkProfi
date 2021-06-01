@@ -6,7 +6,7 @@ catboost
 joblib
 peewee==3.7.1
 sklearn==0.0
-urllib3==1.23
+urllib3==1.26.5
 vk==2.0.2
 vk-api==11.3.0
 
