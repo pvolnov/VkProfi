@@ -11,8 +11,6 @@ web-fraemwork Flask. The database is this sqllight, it stores information about 
 and the response data. Below is the user class in the database (peewee library). The main file is app.py
 
 
-Translated with www.DeepL.com/Translator (free version)
-
 ```angular2
 db = SqliteDatabase('db.sqlite3')
 
