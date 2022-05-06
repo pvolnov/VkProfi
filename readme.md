@@ -1,15 +1,17 @@
 # vkprofi
 
-Профоринтационный бот для Vk, работающий на алгоритмах машинного обучения.
+Proforintation bot for Vk, working on machine learning algorithms.
 
-#### Бот.
+#### Bot.
 
-Бот работает на библиотеке vk_api для Python 3.7. Взаимодействие с пользоватедем происходит 
-при помощи Calback Api. Информация обо всех новых сообщения отправляется на htpps приложение
-на сервере heroku, а затем переадресуется по http на мой Amazon сервер. Обрабатывается с помощью
-web-fraemwork Flask. База данный sqllight, там хранится информация о пользователе, его текущем вопросе
-и данных ответах. Ниже класс пользователя в БД (библиотека peewee). Основной файл - app.py
+The bot runs on the vk_api library for Python 3.7. Interaction with the user takes place 
+by means of Calback Api. Information about all new messages is sent to htpps application
+on heroku's server and then forwarded via http to my Amazon server. This is handled by a
+web-fraemwork Flask. The database is this sqllight, it stores information about the user, his current question
+and the response data. Below is the user class in the database (peewee library). The main file is app.py
 
+
+Translated with www.DeepL.com/Translator (free version)
 
 ```angular2
 db = SqliteDatabase('db.sqlite3')
@@ -26,11 +28,12 @@ class Subs(Model):
         db_table='Subs'
 ``` 
 
-#### Ml часть.
-Для обучения моделей машинного обучения оспользовались ответы более чем 400 специалистов из IT сферы. Помимо прохождения теста они указывают свою проффесию, бот основан на теории, что выбирая узкое направленние в IT сфере, люди руководствуются своими предпочтениями, основанными на особенностях характера. Я использую мульклассовую линейную регрессию и делаю нормализацию выходных данных. Благодаря этоому профессии выдаются примерно в одинаковом количестве. Определение профессии теперь происходит в 2 этапа - выбор отрасли и специализация (она уже деревьями решений CatBoostClassifier). Так же я распарсили информацию и профессия и ссылки на курсы, которая отправляется после прохождения теста. Что бы решить проблему с медленной скорость я залил все на быстрый амазоновский сервак и сделали асинхронную выгрузку фотографий (ответ ~1с).
-Сейчас бот подключен к группе https://vk.com/vkproorintation , в боте 15 профессий. 
+#### Ml С‡Р°СЃС‚СЊ.
+The answers of more than 400 IT professionals were used to train machine learning models. In addition to taking the test, they also indicate their occupation; the bot is based on the theory that when people choose a narrow direction in IT, they are guided by their preferences, based on their character traits. I use multiclass linear regression and normalize the output. Thanks to this, professions are given out in roughly equal numbers. The profession is now defined in 2 steps - industry selection and specialization (it's already in the CatBoostClassifier decision trees). Also, I dissolved the information and profession and links to courses that are sent after the test. To solve problem with slow speed I uploaded everything to fast Amazon server and made asynchronous unloading of photos (response ~1s).
+Now the bot is connected to the group https://vk.com/vkproorintation , the bot has 15 professions. 
 
-Ниже код, который отправляет данные на обучение.
+Below is the code that sends the data to the training.
+
 ```
 from sklearn.multioutput import MultiOutputRegressor
 from sklearn.datasets import make_regression
